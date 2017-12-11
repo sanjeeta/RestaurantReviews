@@ -12,13 +12,16 @@
         <div class="content-wrapper">
             <div class="float-left">
                 <p class="site-title">
-                    <a href="~/">ASP.NET Web API</a></p>
+                    <a href="~/">Restaurant Rating</a></p>
             </div>
             <div class="float-right">
                 <nav>
                     <ul id="menu">
                         <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, null)</li>
-                        <li>@Html.ActionLink("API", "Index", "Help", new { area = "" }, null)</li>
+                        <li>@Html.ActionLink("AddRestaurant", "CreateRestaurant", "Home", new { area = "" }, null)</li>
+                        <li>@Html.ActionLink("AddReview", "CreateReview", "Home", new { area = "" }, null)</li>
+                        <li>@Html.ActionLink("GetReview", "DetailsReview", "Home", new { area = "" }, null)</li>
+                        <li>@Html.ActionLink("GetRestaurant", "RestaurantListByCity", "Home", new { area = "" }, null)</li>
                     </ul>
                 </nav>
             </div>

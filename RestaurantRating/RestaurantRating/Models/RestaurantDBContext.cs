@@ -1,4 +1,4 @@
-﻿//using RestaurantRating.Migrations;
+﻿using RestaurantRating.Migrations;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -30,7 +30,7 @@ namespace RestaurantRating.Models
             });
 
 
-           // Database.SetInitializer(new MigrateDatabaseToLatestVersion<RestaurantDBContext, Configuration>());
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<RestaurantDBContext, Configuration>());
             base.OnModelCreating(modelBuilder);
 
         }

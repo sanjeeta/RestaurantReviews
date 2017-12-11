@@ -161,9 +161,20 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NameRestaurantController.cs" />
+    <Compile Include="Controllers\RestaurantByCityController.cs" />
+    <Compile Include="Controllers\RestaurantController.cs" />
+    <Compile Include="Controllers\ReviewsByUserController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
+    <Compile Include="Data\DummyData.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712110058383_InitialCreate.cs" />
+    <Compile Include="Migrations\201712110058383_InitialCreate.Designer.cs">
+      <DependentUpon>201712110058383_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Restaurant.cs" />
     <Compile Include="Models\RestaurantDBContext.cs" />
     <Compile Include="Models\Users.cs" />
@@ -225,6 +236,7 @@
     <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Docs\Migrations.txt" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Areas\HelpPage\Views\Web.config" />
@@ -239,6 +251,8 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
+    <Content Include="Images\man.jpg" />
+    <Content Include="Images\restaurant.jpg" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -281,12 +295,27 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\CreateRestaurant.cshtml" />
+    <Content Include="Views\Home\RestaurantSuccess.cshtml" />
+    <Content Include="Views\Home\CreateReview.cshtml" />
+    <Content Include="Views\Home\ReviewSuccess.cshtml" />
+    <Content Include="Views\Home\DetailsReview.cshtml" />
+    <Content Include="Views\Home\GetReview.cshtml" />
+    <Content Include="Views\Home\DeleteSuccess.cshtml" />
+    <Content Include="Views\Home\DeleteFailure.cshtml" />
+    <Content Include="Views\Home\RestaurantListByCity.cshtml" />
+    <Content Include="Views\Home\GetRestaurantFromCity.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201712110058383_InitialCreate.resx">
+      <DependentUpon>201712110058383_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

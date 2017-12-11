@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RestaurantRating.Migrations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,12 +17,20 @@ namespace RestaurantRating
     {
         protected void Application_Start()
         {
+            RunMigrations();
             AreaRegistration.RegisterAllAreas();
 
             WebApiConfig.Register(GlobalConfiguration.Configuration);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+        }
+
+        public static void RunMigrations()
+        {
+            var migrator = new Configuration();
+            var dbMigrator = new System.Data.Entity.Migrations.DbMigrator(migrator);
+            dbMigrator.Update();
         }
     }
 }
